@@ -853,11 +853,11 @@ def adam_filter(model_path):
 
 
 if __name__ == "__main__":
-    if FLAGS.environment == "tinymine":
-        print('current working dir [{0}]'.format(os.getcwd()))
-        w_d = os.path.dirname(os.path.abspath(__file__))
-        print('change wording dir to [{0}]'.format(w_d))
-        os.chdir(w_d)
+
+    print('current working dir [{0}]'.format(os.getcwd()))
+    w_d = os.path.dirname(os.path.abspath(__file__))
+    print('change wording dir to [{0}]'.format(w_d))
+    os.chdir(w_d)
 
     tf.app.run()
     # filter model
