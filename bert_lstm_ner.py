@@ -74,7 +74,7 @@ flags.DEFINE_integer(
     "The maximum total input sequence length after WordPiece tokenization."
 )
 
-flags.DEFINE_boolean('clean', True, 'remove the files which created by last training')
+flags.DEFINE_boolean('clean', False, 'remove the files which created by last training')
 
 flags.DEFINE_bool("do_train", True, "Whether to run training."
 )
@@ -92,7 +92,7 @@ flags.DEFINE_integer("predict_batch_size", 8, "Total batch size for predict.")
 
 flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for Adam.")
 
-flags.DEFINE_float("num_train_epochs", 15.0, "Total number of training epochs to perform.")
+flags.DEFINE_float("num_train_epochs", 3, "Total number of training epochs to perform.")
 flags.DEFINE_float('droupout_rate', 0.5, 'Dropout rate')
 flags.DEFINE_float('clip', 5, 'Gradient clip')
 flags.DEFINE_float(
@@ -506,12 +506,12 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
         tf.logging.info("**** Trainable Variables ****")
 
         # 打印加载模型的参数
-#         for var in tvars:
-#             init_string = ""
-#             if var.name in initialized_variable_names:
-#                 init_string = ", *INIT_FROM_CKPT*"
-#             tf.logging.info("  name = %s, shape = %s%s", var.name, var.shape,
-#                             init_string)
+        for var in tvars:
+            init_string = ""
+            if var.name in initialized_variable_names:
+                init_string = ", *INIT_FROM_CKPT*"
+            tf.logging.info("  name = %s, shape = %s%s", var.name, var.shape,
+                            init_string)
         output_spec = None
         if mode == tf.estimator.ModeKeys.TRAIN:
             train_op = optimization.create_optimizer(
