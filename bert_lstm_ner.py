@@ -75,7 +75,7 @@ flags.DEFINE_integer(
     "The maximum total input sequence length after WordPiece tokenization."
 )
 
-flags.DEFINE_boolean('clean', True, 'remove the files which created by last training')
+flags.DEFINE_boolean('clean', False, 'remove the files which created by last training')
 
 flags.DEFINE_bool("do_train", True, "Whether to run training."
 )
@@ -93,7 +93,7 @@ flags.DEFINE_integer("predict_batch_size", 8, "Total batch size for predict.")
 
 flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for Adam.")
 
-flags.DEFINE_float("num_train_epochs", 3, "Total number of training epochs to perform.")
+flags.DEFINE_float("num_train_epochs", 2, "Total number of training epochs to perform.")
 flags.DEFINE_float('droupout_rate', 0.5, 'Dropout rate')
 flags.DEFINE_float('clip', 5, 'Gradient clip')
 flags.DEFINE_float(
