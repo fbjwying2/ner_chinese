@@ -38,6 +38,7 @@ FLAGS = flags.FLAGS
 
 
 bert_path = '/data/HataFeng/data-ner'
+output_dir = '/output'
 
 flags.DEFINE_string(
     "data_dir", '/data/HataFeng/data-ner-train',
@@ -54,7 +55,7 @@ flags.DEFINE_string(
 )
 
 flags.DEFINE_string(
-    "output_dir", '/output',
+    "output_dir", output_dir,
     "The output directory where the model checkpoints will be written."
 )
 
@@ -74,7 +75,7 @@ flags.DEFINE_integer(
     "The maximum total input sequence length after WordPiece tokenization."
 )
 
-flags.DEFINE_boolean('clean', False, 'remove the files which created by last training')
+flags.DEFINE_boolean('clean', True, 'remove the files which created by last training')
 
 flags.DEFINE_bool("do_train", True, "Whether to run training."
 )
@@ -113,7 +114,7 @@ tf.flags.DEFINE_string("master", None, "[Optional] TensorFlow master URL.")
 flags.DEFINE_integer(
     "num_tpu_cores", 8,
     "Only used if `use_tpu` is True. Total number of TPU cores to use.")
-flags.DEFINE_string('data_config_path', 'data.conf',
+flags.DEFINE_string('data_config_path', output_dir + '/data.conf',
                     'data config file, which save train and dev config')
 # lstm parame
 flags.DEFINE_integer('lstm_size', 128, 'size of lstm units')
