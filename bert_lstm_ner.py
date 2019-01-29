@@ -85,7 +85,7 @@ flags.DEFINE_bool("do_eval", True, "Whether to run eval on the dev set.")
 
 flags.DEFINE_bool("do_predict", True, "Whether to run the model in inference mode on the test set.")
 
-flags.DEFINE_integer("train_batch_size", 64, "Total batch size for training.")
+flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")
 
 flags.DEFINE_integer("eval_batch_size", 8, "Total batch size for eval.")
 
@@ -101,10 +101,10 @@ flags.DEFINE_float(
     "Proportion of training to perform linear learning rate warmup for. "
     "E.g., 0.1 = 10% of training.")
 
-flags.DEFINE_integer("save_checkpoints_steps", 1000,
+flags.DEFINE_integer("save_checkpoints_steps", 200,
                      "How often to save the model checkpoint.")
 
-flags.DEFINE_integer("iterations_per_loop", 1000,
+flags.DEFINE_integer("iterations_per_loop", 200,
                      "How many steps to make in each estimator call.")
 
 flags.DEFINE_string("vocab_file", os.path.join(bert_path, 'vocab.txt'),
