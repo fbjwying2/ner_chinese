@@ -41,7 +41,7 @@ bert_path = '/data/HataFeng/data-ner'
 output_dir = '/output'
 
 flags.DEFINE_string(
-    "data_dir", '/data/HataFeng/data-ner-train2',
+    "data_dir", '/data/HataFeng/data-news-1998',
     "The input datadir.",
 )
 
