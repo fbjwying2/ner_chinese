@@ -83,8 +83,8 @@ class BaseModel(object):
 
     def save_session(self):
         """Saves session = weights"""
-        if not os.path.exists(self.config.dir_model):
-            os.makedirs(self.config.dir_model)
+        # if not os.path.exists(self.config.dir_model):
+        #     os.makedirs(self.config.dir_model)
         self.saver.save(self.sess, self.config.dir_model)
 
 
