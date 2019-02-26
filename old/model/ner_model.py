@@ -294,6 +294,11 @@ class NERModel(BaseModel):
             if i % 10 == 0:
                 self.file_writer.add_summary(summary, epoch*nbatches + i)
 
+            if (i + 1) % 10000 == 0:
+                print("--- saving model...")
+                self.save_session()
+                print("--- save model end")
+
         metrics = self.run_evaluate(dev)
         msg = " - ".join(["{} {:04.2f}".format(k, v)
                 for k, v in metrics.items()])
