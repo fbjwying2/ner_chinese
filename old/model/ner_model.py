@@ -288,7 +288,7 @@ class NERModel(BaseModel):
 
             if i % 100 == 0 or i < 100:
                 #prog.update(i + 1, [("train loss", train_loss)])
-                print("---step: {}/{} train loss: {}".fromat(i+1, nbatches,train_loss))
+                print("---step: {}/{} train loss: {}".format(i+1, nbatches,train_loss))
 
             # tensorboard
             if i % 10 == 0:
