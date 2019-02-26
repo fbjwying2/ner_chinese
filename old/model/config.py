@@ -59,11 +59,13 @@ class Config():
     if "tinymind" == os_type:
         dir_output = "/output"
         dir_model = dir_output
+        dir_model_init = "/data/HataFeng/data-ner-1998-2014"
         path_log = dir_output + "/log.txt"
     else:
         # general config
         dir_output = "results/test/"
         dir_model = dir_output + "model.weights/"
+        dir_model_init = dir_model
         path_log = dir_output + "log.txt"
 
     # embeddings
