@@ -59,7 +59,7 @@ class Config():
     if "tinymind" == os_type:
         dir_output = "/output"
         dir_model = dir_output
-        path_log = dir_output
+        path_log = dir_output + "/log.txt"
     else:
         # general config
         dir_output = "results/test/"
