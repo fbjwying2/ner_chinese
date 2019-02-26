@@ -294,7 +294,7 @@ class NERModel(BaseModel):
             if i % 10 == 0:
                 self.file_writer.add_summary(summary, epoch*nbatches + i)
 
-            if (i + 1) % 10000 == 0:
+            if i % 10000 == 0:
                 print("--- saving model...")
                 self.save_session()
                 print("--- save model end")
