@@ -14,7 +14,7 @@ def main(_):
     # build model
     model = NERModel(config)
     model.build()
-    #model.restore_session(config.dir_model_init)
+    model.restore_session(config.dir_model)
     # model.restore_session("results/crf/model.weights/") # optional, restore weights
     # model.reinitialize_weights("proj")
 
